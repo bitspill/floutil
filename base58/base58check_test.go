@@ -1,4 +1,5 @@
 // Copyright (c) 2013-2014 The btcsuite developers
+// Copyright (c) 2018 The Flo developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -7,7 +8,7 @@ package base58_test
 import (
 	"testing"
 
-	"github.com/btcsuite/btcutil/base58"
+	"github.com/bitspill/floutil/base58"
 )
 
 var checkEncodingStringTests = []struct {

@@ -1,4 +1,5 @@
 // Copyright (c) 2014-2017 The btcsuite developers
+// Copyright (c) 2018 The Flo developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -16,7 +17,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/btcsuite/btcd/chaincfg"
+	"github.com/bitspill/flod/chaincfg"
 )
 
 // TestBIP0032Vectors tests the vectors provided by [BIP32] to ensure the
@@ -232,7 +233,7 @@ tests:
 		}
 
 		if extKey.Depth() != uint8(len(test.path)) {
-			t.Errorf("Depth of key %d should match fixture path")
+			t.Errorf("Depth of key %d should match fixture path", i)
 			continue
 		}
 

@@ -1,14 +1,15 @@
 // Copyright (c) 2013, 2014 The btcsuite developers
+// Copyright (c) 2018 The Flo developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package btcutil_test
+package floutil_test
 
 import (
 	"math"
 	"testing"
 
-	. "github.com/btcsuite/btcutil"
+	. "github.com/bitspill/floutil"
 )
 
 func TestAmountCreation(t *testing.T) {
