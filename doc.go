@@ -4,7 +4,7 @@
 // license that can be found in the LICENSE file.
 
 /*
-package floutil provides bitcoin-specific convenience functions and types.
+Package floutil provides bitcoin-specific convenience functions and types.
 
 Block Overview
 
