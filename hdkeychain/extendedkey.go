@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/bitspill/flod/floec"
 	"github.com/bitspill/flod/chaincfg"
 	"github.com/bitspill/flod/chaincfg/chainhash"
+	"github.com/bitspill/flod/floec"
 	"github.com/bitspill/floutil"
 	"github.com/bitspill/floutil/base58"
 )

@@ -12,8 +12,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/bitspill/flod/floec"
 	"github.com/bitspill/flod/chaincfg"
+	"github.com/bitspill/flod/floec"
 	"github.com/bitspill/floutil/base58"
 	"github.com/bitspill/floutil/bech32"
 	"golang.org/x/crypto/ripemd160"

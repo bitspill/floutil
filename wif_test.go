@@ -8,8 +8,8 @@ package floutil_test
 import (
 	"testing"
 
-	"github.com/bitspill/flod/floec"
 	"github.com/bitspill/flod/chaincfg"
+	"github.com/bitspill/flod/floec"
 	. "github.com/bitspill/floutil"
 )
 
