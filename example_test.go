@@ -18,9 +18,9 @@ func ExampleAmount() {
 	a = floutil.Amount(1e5)
 	fmt.Println("100,000 Satoshis:", a)
 	// Output:
-	// Zero Satoshi: 0 BTC
-	// 100,000,000 Satoshis: 1 BTC
-	// 100,000 Satoshis: 0.001 BTC
+	// Zero Satoshi: 0 FLO
+	// 100,000,000 Satoshis: 1 FLO
+	// 100,000 Satoshis: 0.001 FLO
 }
 
 func ExampleNewAmount() {
@@ -52,25 +52,25 @@ func ExampleNewAmount() {
 	}
 	fmt.Println(amountNaN) //Output 4
 
-	// Output: 1 BTC
-	// 0.01234567 BTC
-	// 0 BTC
+	// Output: 1 FLO
+	// 0.01234567 FLO
+	// 0 FLO
 	// invalid bitcoin amount
 }
 
 func ExampleAmount_unitConversions() {
 	amount := floutil.Amount(44433322211100)
 
-	fmt.Println("Satoshi to kBTC:", amount.Format(floutil.AmountKiloBTC))
-	fmt.Println("Satoshi to BTC:", amount)
-	fmt.Println("Satoshi to MilliBTC:", amount.Format(floutil.AmountMilliBTC))
-	fmt.Println("Satoshi to MicroBTC:", amount.Format(floutil.AmountMicroBTC))
+	fmt.Println("Satoshi to kFLO:", amount.Format(floutil.AmountKiloFLO))
+	fmt.Println("Satoshi to FLO:", amount)
+	fmt.Println("Satoshi to MilliFLO:", amount.Format(floutil.AmountMilliFLO))
+	fmt.Println("Satoshi to MicroFLO:", amount.Format(floutil.AmountMicroFLO))
 	fmt.Println("Satoshi to Satoshi:", amount.Format(floutil.AmountSatoshi))
 
 	// Output:
-	// Satoshi to kBTC: 444.333222111 kBTC
-	// Satoshi to BTC: 444333.222111 BTC
-	// Satoshi to MilliBTC: 444333222.111 mBTC
-	// Satoshi to MicroBTC: 444333222111 μBTC
+	// Satoshi to kFLO: 444.333222111 kFLO
+	// Satoshi to FLO: 444333.222111 FLO
+	// Satoshi to MilliFLO: 444333222.111 mFLO
+	// Satoshi to MicroFLO: 444333222111 μFLO
 	// Satoshi to Satoshi: 44433322211100 Satoshi
 }

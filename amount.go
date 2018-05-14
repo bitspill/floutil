@@ -20,33 +20,33 @@ type AmountUnit int
 // These constants define various units used when describing a bitcoin
 // monetary amount.
 const (
-	AmountMegaBTC  AmountUnit = 6
-	AmountKiloBTC  AmountUnit = 3
-	AmountBTC      AmountUnit = 0
-	AmountMilliBTC AmountUnit = -3
-	AmountMicroBTC AmountUnit = -6
+	AmountMegaFLO  AmountUnit = 6
+	AmountKiloFLO  AmountUnit = 3
+	AmountFLO      AmountUnit = 0
+	AmountMilliFLO AmountUnit = -3
+	AmountMicroFLO AmountUnit = -6
 	AmountSatoshi  AmountUnit = -8
 )
 
 // String returns the unit as a string.  For recognized units, the SI
 // prefix is used, or "Satoshi" for the base unit.  For all unrecognized
-// units, "1eN BTC" is returned, where N is the AmountUnit.
+// units, "1eN FLO" is returned, where N is the AmountUnit.
 func (u AmountUnit) String() string {
 	switch u {
-	case AmountMegaBTC:
-		return "MBTC"
-	case AmountKiloBTC:
-		return "kBTC"
-	case AmountBTC:
-		return "BTC"
-	case AmountMilliBTC:
-		return "mBTC"
-	case AmountMicroBTC:
-		return "μBTC"
+	case AmountMegaFLO:
+		return "MFLO"
+	case AmountKiloFLO:
+		return "kFLO"
+	case AmountFLO:
+		return "FLO"
+	case AmountMilliFLO:
+		return "mFLO"
+	case AmountMicroFLO:
+		return "μFLO"
 	case AmountSatoshi:
 		return "Satoshi"
 	default:
-		return "1e" + strconv.FormatInt(int64(u), 10) + " BTC"
+		return "1e" + strconv.FormatInt(int64(u), 10) + " FLO"
 	}
 }
 
@@ -70,7 +70,7 @@ func round(f float64) Amount {
 // does not check that the amount is within the total amount of bitcoin
 // producible as f may not refer to an amount at a single moment in time.
 //
-// NewAmount is for specifically for converting BTC to Satoshi.
+// NewAmount is for specifically for converting FLO to Satoshi.
 // For creating a new Amount with an int64 value which denotes a quantity of Satoshi,
 // do a simple type conversion from type int64 to Amount.
 // See GoDoc for example: http://godoc.org/github.com/bitspill/floutil#example-Amount
@@ -95,9 +95,9 @@ func (a Amount) ToUnit(u AmountUnit) float64 {
 	return float64(a) / math.Pow10(int(u+8))
 }
 
-// ToBTC is the equivalent of calling ToUnit with AmountBTC.
-func (a Amount) ToBTC() float64 {
-	return a.ToUnit(AmountBTC)
+// ToFLO is the equivalent of calling ToUnit with AmountFLO.
+func (a Amount) ToFLO() float64 {
+	return a.ToUnit(AmountFLO)
 }
 
 // Format formats a monetary amount counted in bitcoin base units as a
@@ -109,9 +109,9 @@ func (a Amount) Format(u AmountUnit) string {
 	return strconv.FormatFloat(a.ToUnit(u), 'f', -int(u+8), 64) + units
 }
 
-// String is the equivalent of calling Format with AmountBTC.
+// String is the equivalent of calling Format with AmountFLO.
 func (a Amount) String() string {
-	return a.Format(AmountBTC)
+	return a.Format(AmountFLO)
 }
 
 // MulF64 multiplies an Amount by a floating point value.  While this is not

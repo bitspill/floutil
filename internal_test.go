@@ -13,7 +13,7 @@ interface. The functions are only exported while the tests are being run.
 package floutil
 
 import (
-	"github.com/bitspill/flod/btcec"
+	"github.com/bitspill/flod/floec"
 	"github.com/bitspill/floutil/base58"
 	"github.com/bitspill/floutil/bech32"
 	"golang.org/x/crypto/ripemd160"
@@ -83,10 +83,10 @@ func TstAddressWitnessScriptHash(version byte, program [32]byte,
 func TstAddressPubKey(serializedPubKey []byte, pubKeyFormat PubKeyFormat,
 	netID byte) *AddressPubKey {
 
-	pubKey, _ := btcec.ParsePubKey(serializedPubKey, btcec.S256())
+	pubKey, _ := floec.ParsePubKey(serializedPubKey, floec.S256())
 	return &AddressPubKey{
 		pubKeyFormat: pubKeyFormat,
-		pubKey:       (*btcec.PublicKey)(pubKey),
+		pubKey:       (*floec.PublicKey)(pubKey),
 		pubKeyHashID: netID,
 	}
 }
