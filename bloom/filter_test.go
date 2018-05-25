@@ -84,9 +84,9 @@ func TestFilterInsert(t *testing.T) {
 	}
 
 	got := bytes.NewBuffer(nil)
-	err = f.MsgFilterLoad().BtcEncode(got, wire.ProtocolVersion, wire.LatestEncoding)
+	err = f.MsgFilterLoad().FloEncode(got, wire.ProtocolVersion, wire.LatestEncoding)
 	if err != nil {
-		t.Errorf("TestFilterInsert BtcDecode failed: %v\n", err)
+		t.Errorf("TestFilterInsert FloDecode failed: %v\n", err)
 		return
 	}
 
@@ -144,9 +144,9 @@ func TestFilterFPRange(t *testing.T) {
 		f := test.filter
 		f.AddHash(hash)
 		got := bytes.NewBuffer(nil)
-		err = f.MsgFilterLoad().BtcEncode(got, wire.ProtocolVersion, wire.LatestEncoding)
+		err = f.MsgFilterLoad().FloEncode(got, wire.ProtocolVersion, wire.LatestEncoding)
 		if err != nil {
-			t.Errorf("BtcDecode unexpected error: %v\n", err)
+			t.Errorf("FloDecode unexpected error: %v\n", err)
 			continue
 		}
 		if !bytes.Equal(got.Bytes(), want) {
@@ -197,9 +197,9 @@ func TestFilterInsertWithTweak(t *testing.T) {
 		return
 	}
 	got := bytes.NewBuffer(nil)
-	err = f.MsgFilterLoad().BtcEncode(got, wire.ProtocolVersion, wire.LatestEncoding)
+	err = f.MsgFilterLoad().FloEncode(got, wire.ProtocolVersion, wire.LatestEncoding)
 	if err != nil {
-		t.Errorf("TestFilterInsertWithTweak BtcDecode failed: %v\n", err)
+		t.Errorf("TestFilterInsertWithTweak FloDecode failed: %v\n", err)
 		return
 	}
 
@@ -231,9 +231,9 @@ func TestFilterInsertKey(t *testing.T) {
 		return
 	}
 	got := bytes.NewBuffer(nil)
-	err = f.MsgFilterLoad().BtcEncode(got, wire.ProtocolVersion, wire.LatestEncoding)
+	err = f.MsgFilterLoad().FloEncode(got, wire.ProtocolVersion, wire.LatestEncoding)
 	if err != nil {
-		t.Errorf("TestFilterInsertWithTweak BtcDecode failed: %v\n", err)
+		t.Errorf("TestFilterInsertWithTweak FloDecode failed: %v\n", err)
 		return
 	}
 

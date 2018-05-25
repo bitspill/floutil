@@ -24,7 +24,7 @@ func ExampleNewMaster() {
 	}
 
 	// Generate a new master node using the seed.
-	key, err := hdkeychain.NewMaster(seed, &chaincfg.BtcMainNetParams)
+	key, err := hdkeychain.NewMaster(seed, &chaincfg.MainNetParams)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -120,12 +120,12 @@ func Example_defaultWalletLayout() {
 
 	// Get and show the address associated with the extended keys for the
 	// main bitcoin	network.
-	acct0ExtAddr, err := acct0Ext10.Address(&chaincfg.BtcMainNetParams)
+	acct0ExtAddr, err := acct0Ext10.Address(&chaincfg.MainNetParams)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	acct0IntAddr, err := acct0Int0.Address(&chaincfg.BtcMainNetParams)
+	acct0IntAddr, err := acct0Int0.Address(&chaincfg.MainNetParams)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -134,8 +134,8 @@ func Example_defaultWalletLayout() {
 	fmt.Println("Account 0 Internal Address 0:", acct0IntAddr)
 
 	// Output:
-	// Account 0 External Address 10: 1HVccubUT8iKTapMJ5AnNA4sLRN27xzQ4F
-	// Account 0 Internal Address 0: 1J5rebbkQaunJTUoNVREDbeB49DqMNFFXk
+	// Account 0 External Address 10: FNKj5i2ZJSvz5khP9kpwLYbQN5P2yKfpqP
+	// Account 0 Internal Address 0: FNuy7Q2qFu8SvdMqEB5PBzAi5oErBR8Nov
 }
 
 // This example demonstrates the audits use case in BIP0032.
